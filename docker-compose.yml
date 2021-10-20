@@ -1,0 +1,29 @@
+version: '2'
+services:
+  node:
+    build:
+      context: ./images/node
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+  web:
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - "./images/nginx/config:/etc/nginx/conf.d"
+      - "./images/node/web/public:/public"
+    depends_on:
+      - node
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "node"
+      MYSQL_USER: "jujuxia"
+      MYSQL_PASSWORD: "Yy940320"
+    volumes:
+      - data:/var/lib/mysql
+volumes:
+  data:
+    driver: local
