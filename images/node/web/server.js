@@ -1,8 +1,8 @@
 let http = require('http')
 let mysql = require('mysql')
-let connection = mysql.createConnection({
+let connection = mysql.createConnection({ //配置与docker-compose.yml中db配置一一对应
   hots: 'db',
-  user: 'jujuxia',
+  user: 'huangjie',
   password: 'Yy940320',
   database:'node'
 })

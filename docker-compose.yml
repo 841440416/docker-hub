@@ -18,9 +18,9 @@ services:
   db:
     image: mariadb
     environment:
-      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ROOT_PASSWORD: "Yy940320"
       MYSQL_DATABASE: "node"
-      MYSQL_USER: "jujuxia"
+      MYSQL_USER: "huangjie"
       MYSQL_PASSWORD: "Yy940320"
     volumes:
       - data:/var/lib/mysql
